@@ -16,9 +16,9 @@ pipeline {
 
     stage("CI Stage") {
       steps {
-        sh vote_image=703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:vote-v$BUILD_NUMBER
-        sh result_image=703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:result-v$BUILD_NUMBER
-        sh worker_image=703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:worker-v$BUILD_NUMBER
+        sh vote_image="703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:vote-v$BUILD_NUMBER"
+        sh result_image="703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:result-v$BUILD_NUMBER"
+        sh worker_image="703172697697.dkr.ecr.us-east-1.amazonaws.com/vote-app:worker-v$BUILD_NUMBER"
 
         sh sudo docker build -t $vote_image ./vote
         sh sudo docker build -t $result_image ./result
